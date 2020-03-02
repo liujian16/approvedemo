@@ -55,9 +55,9 @@ public  class  ApproveWorker {
 		int t = total.incrementAndGet();
 		int seq = 0;
 		if(hashLoadBalance ) {
-			int nounce = t / 1000;
+			int nonce = t / 1000;
 			
-			String digest = DigestUtils.md5DigestAsHex((hash+nounce).getBytes());
+			String digest = DigestUtils.md5DigestAsHex((hash+nonce).getBytes());
 			
 			int b = Integer.parseInt(digest.substring(0,6), 16);
 			
